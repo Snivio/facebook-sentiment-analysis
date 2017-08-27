@@ -8,9 +8,9 @@ try:
 except ImportError:
     from urllib2 import urlopen, Request
 
-app_id = "1115828628517612"
-app_secret = "7e0053af86237fbd4f8154f2a349104a"  # DO NOT SHARE WITH ANYONE!
-group_id = "265534123850099"
+app_id = "******$$$"
+app_secret = "****************"  # DO NOT SHARE WITH ANYONE!
+group_id = "************"
 
 access_token = app_id + "|" + app_secret
 
