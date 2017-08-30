@@ -163,14 +163,12 @@ def scrapeFacebookPageFeedStatus(group_id, access_token, since_date, until_date)
                     reactions_data = reactions[status_data[0]]
 
                     result = re.sub(r"(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", "",status_data[1])
-                   #enyer your sentiment analysis function hear
-                   ''' *
-                    *
-                    *'''
-
-                    
-                        print "username: ", status_data[2], "\npost: ", status_data[1],"\n"
-                   
+                    analysis = TextBlob(result)
+                    if analysis.sentiment.polarity > 0:
+                        print "username: ", status_data[2], "\npost: ",result,"\n"                       
+                    else:                        
+                        print "snivio"                
+                                          
                 # output progress occasionally to make sure code is not
                 # stalling
                 num_processed += 1
